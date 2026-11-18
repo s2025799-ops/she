@@ -1,626 +1,964 @@
 <!DOCTYPE html>
-<html lang="ja-jp">
+<html lang="ja">
 <head>
-<meta charset="utf-8">
- 
-<!-- Google Tag Manager --> 
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MGG2SS4T');</script> 
-<!-- End Google Tag Manager -->
- 
-<link rel="preconnect" href="https://www.youtube.com">
-<link rel="preconnect" href="https://www.google.com">
-<link rel="preconnect" href="https://i.ytimg.com">
-<link rel="preconnect" href="https://s.ytimg.com">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
-<title>映画『シン・ホシノ』公式サイト｜製作中</title>
-<meta name="description" content="何気ない日常に降り立った悲劇と対抗。ディピョン丸の戦いが今、始まる。監督・脚本・VFX：星野真之">
-<!--<meta name="keywords" content="">--> 
- 
-<!-- og -->
-<meta property="og:title" content="映画『シン・ホシノ』公式サイト｜製作中">
-<meta property="og:site_name" content="映画『シン・ホシノ』公式サイト｜製作中">
-<meta property="og:type" content="movie">
-<meta property="og:url" content="https://godzilla-minuszero.toho-movie.jp">
-<meta property="og:image" content="https://godzilla-minuszero.toho-movie.jp/ogp5.jpg">
-<meta property="og:description" content="何気ない日常に降り立った悲劇と対抗。ディピョン丸の戦いが今、始まる。監督・脚本・VFX：星野真之">
-<!-- <meta property="fb:app_id" content="00000000">--> 
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>映画『残念無念。』公式サイト</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-<!-- css -->
-<link rel="stylesheet" type="text/css" href="./css/slick.css?var=02">
-<link rel="stylesheet" type="text/css" href="./css/slick-theme.css?var=02">
-<link rel="stylesheet" href="./css/modaal.css?var=04" />
-<link rel="stylesheet" href="./css/reset.css?var=07" />
-<link rel="stylesheet" href="./css/common.css?var=18" />
-<link rel="stylesheet" href="./css/add.css?var=18" />
- 
-<!-- Adobe Fonts --> 
-<script>
-  (function(d) {
-    var config = {
-      kitId: 'uga7axm',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
+  <style>
+    :root {
+      --bg-khaki: #4c412a;
+      --bg-khaki-dark: #38301e;
+      --bg-dark: #12100c;
+      --text-main: #ffffff;
+      --text-sub: #dcd5c7;
+      --accent-gold: #d6bc7c;
+      --border-light: rgba(255, 255, 255, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-khaki);
+      color: var(--text-main);
+      font-family: 'Noto Serif JP', serif;
+      letter-spacing: 0.12em;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== 1. 固定ヘッダー ===== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    }
+
+    .header-logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 4px 10px;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .sns-links {
+      display: flex;
+      gap: 14px;
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    .menu-btn {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .menu-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    /* ナビゲーションメニュー（三本線クリックで開閉） */
+    .nav-drawer {
+      position: fixed;
+      top: 0;
+      right: -280px;
+      width: 260px;
+      height: 100vh;
+      background: rgba(15, 13, 10, 0.96);
+      border-left: 1px solid #444;
+      z-index: 1100;
+      padding: 70px 30px;
+      transition: right 0.3s ease;
+    }
+
+    .nav-drawer.open {
+      right: 0;
+    }
+
+    .nav-drawer ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+    }
+
+    .nav-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 1.6rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ===== 2. ヒーロー画面（トップビジュアル） ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 85vh;
+      background-color: #1a1f24;
+      display: flex;
+      align-items: center;
+      padding: 100px 6% 60px;
+      overflow: hidden;
+    }
+
+    /* 背景画像（images/hero.jpg を入れると表示される） */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.65;
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 35% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      min-height: 60vh;
+    }
+
+    .hero-main {
+      max-width: 600px;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      text-shadow: 0 4px 25px rgba(0,0,0,0.9);
+      margin-bottom: 10px;
+    }
+
+    .hero-en {
+      font-size: 1rem;
+      letter-spacing: 0.35em;
+      color: var(--text-sub);
+      margin-bottom: 25px;
+    }
+
+    .hero-credits {
+      font-size: 0.78rem;
+      line-height: 1.9;
+      color: #e0e0e0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    }
+
+    /* 右上の縦書きキャッチコピー */
+    .hero-catch {
+      position: absolute;
+      top: 90px;
+      right: 6%;
+      z-index: 3;
+      writing-mode: vertical-rl;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      line-height: 2;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+    }
+
+    /* 右下の公開表記バッジ */
+    .hero-badge {
+      text-align: right;
+      border-left: 3px solid var(--accent-gold);
+      padding-left: 15px;
+    }
+
+    .hero-badge .sub {
+      font-size: 0.85rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    .hero-badge .main {
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: 0.15em;
+    }
+
+    /* ===== 3. バナーエリア ===== */
+    .banner-area {
+      background-color: var(--bg-dark);
+      padding: 45px 20px;
+    }
+
+    .banner-container {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .banner-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .banner-row-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .banner-slot {
+      position: relative;
+      background: #1f1c16;
+      border: 1px solid #3a3326;
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      overflow: hidden;
+      transition: opacity 0.2s;
+    }
+
+    .banner-slot:hover {
+      opacity: 0.85;
+    }
+
+    .banner-slot img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ===== 共通セクション設定 ===== */
+    .section-khaki {
+      background: linear-gradient(180deg, #52462d 0%, #453b25 100%);
+      padding: 80px 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      margin-bottom: 45px;
+    }
+
+    /* ===== 4. TRAILER セクション ===== */
+    .main-video-wrap {
+      max-width: 720px;
+      margin: 0 auto 25px;
+      background: #000;
+      border: 1px solid var(--border-light);
+    }
+
+    .main-video-wrap video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      color: var(--accent-gold);
+    }
+
+    .trailer-thumbs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .thumb-card {
+      cursor: pointer;
+      text-align: center;
+      opacity: 0.65;
+      transition: opacity 0.2s;
+    }
+
+    .thumb-card.active, .thumb-card:hover {
+      opacity: 1;
+    }
+
+    .thumb-box {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #1b1812;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .thumb-box img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play-icon {
+      position: relative;
+      z-index: 2;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.65);
+      border: 1px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .thumb-title {
+      font-size: 0.8rem;
+    }
+
+    /* ===== 5. NEWS セクション ===== */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 760px;
+      margin: 0 auto 35px;
+    }
+
+    .news-item {
+      position: relative;
+      background: rgba(20, 17, 11, 0.55);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 22px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .news-item:hover {
+      background: rgba(20, 17, 11, 0.85);
+    }
+
+    .news-date {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .news-headline {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .news-tag {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: rgba(255,255,255,0.15);
+      font-size: 0.65rem;
+      padding: 2px 12px;
+      letter-spacing: 0.15em;
+    }
+
+    .btn-more {
+      display: block;
+      width: 220px;
+      margin: 0 auto;
+      padding: 12px 0;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(0,0,0,0.35);
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+    }
+
+    /* ===== 6. INTRODUCTION & STORY セクション ===== */
+    .section-intro {
+      position: relative;
+      background: radial-gradient(circle at center, #2b3036 0%, #141619 100%);
+      padding: 100px 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .intro-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+    }
+
+    .intro-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .intro-lead {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      line-height: 2.5;
+      margin-bottom: 45px;
+    }
+
+    ruby rt {
+      font-size: 0.6em;
+      letter-spacing: 0.1em;
+    }
+
+    .intro-director {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .intro-sub {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      margin-bottom: 45px;
+      line-height: 2.2;
+    }
+
+    .intro-closing {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 2.3;
+      letter-spacing: 0.2em;
+    }
+
+    /* ===== 7. CHARACTER / CAST セクション ===== */
+    .cast-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px 25px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .cast-card {
+      text-align: center;
+    }
+
+    .cast-photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #221d14;
+      border: 1px solid var(--border-light);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #998e7a;
+      overflow: hidden;
+    }
+
+    .cast-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cast-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* ===== 8. STAFF セクション ===== */
+    .staff-main-list {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 45px;
+    }
+
+    .staff-profile {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .staff-photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: #221d14;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: #998e7a;
+      overflow: hidden;
+    }
+
+    .staff-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .staff-role {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-bottom: 4px;
+    }
+
+    .staff-person {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .staff-bio {
+      font-size: 0.82rem;
+      line-height: 1.9;
+      color: #eae4d7;
+    }
+
+    .staff-roll {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.72rem;
+      line-height: 2.2;
+      color: var(--text-sub);
+    }
+
+    /* ===== 9. フッター ===== */
+    footer {
+      background-color: var(--bg-dark);
+      padding: 60px 20px 40px;
+      text-align: center;
+      border-top: 1px solid #2c261b;
+    }
+
+    .footer-logo {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    .eirin-mark {
+      display: inline-block;
+      border: 1px solid #888;
+      padding: 2px 10px;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 20px;
+    }
+
+    .copyright {
+      font-size: 0.7rem;
+      color: #777;
+      margin-top: 15px;
+    }
+
+    /* スマホ画面用の調整 */
+    @media (max-width: 680px) {
+      .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+      }
+      .hero-catch {
+        position: static;
+        writing-mode: horizontal-tb;
+        margin-bottom: 20px;
+      }
+      .banner-row-2, .banner-row-3, .cast-grid {
+        grid-template-columns: 1fr;
+      }
+      .staff-profile {
+        grid-template-columns: 1fr;
+      }
+      .staff-photo {
+        max-width: 200px;
+      }
+    }
+  </style>
 </head>
- 
-<body id="pagetop">
- 
- 
-<!--ProgressBar-->
-<div id="splash">
-  <div class="js-loader"></div>
-  <div class="loader-center">
-    <div id="splash_text">
-      <div class="loading_logo" style="opacity:0;"> <img src="img/common/logo_loading.png" alt="映画『ゴジラ-0.0』公式サイト｜大ヒット上映中"> 
-        <!--  <span class="loading_logo__shine" aria-hidden="true"></span>--> 
+<body>
+
+  <!-- 1. 固定ヘッダー -->
+  <header class="site-header">
+    <a href="#" class="header-logo">残念無念。</a>
+    <div class="header-right">
+      <div class="sns-links">
+        <a href="#trailer">X</a>
+        <a href="#trailer">IG</a>
+        <a href="#trailer">TT</a>
+        <a href="#trailer">YT</a>
       </div>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="メニュー">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    
-    <!--<div class="js-loader-progress" aria-hidden="true" style="opacity:0;">
-      <div class="js-loader-progress-bar"></div>
-      <div class="js-loader-progress-number"></div>
-    </div>--> 
-  </div>
-  <div class="loader_cover"></div>
-</div>
- 
-<!--<div class="header-sp"></div>-->
- 
-<button class="openbtn last_anime" type="button" aria-label="menu" aria-controls="g-nav" aria-expanded="false"> <span></span> <span></span> <span></span> </button>
-<div class="header-base">
- <!-- <div class="header-base_black pc"></div>-->
-  <div class="header-base_shadow">
-    <picture>
-      <source media="(max-width: 750px)" srcset="img/common/header_base_sp.png?var=01">
-      <img src="img/common/header_base.png?var=01" alt=""> </picture>
-  </div>
-</div>
-<div class="home_logo last_anime"> <a href="index.html"> <img src="img/common/logo_02.png?var=01" alt="映画『ゴジラ-0.0』公式サイト｜大ヒット上映中"> </a> </div>
-<nav id="g-nav" class="nav-overlay" aria-hidden="true">
-  <div class="nav-overlay__bg"></div>
-  <div id="g-nav-list" class="nav-overlay__inner">
-    <div class="nav-overlay__top">
-      <div class="g-nav_logo"> <a href="index.html"> <img src="img/common/logo_02.png?var=01" alt="映画『ゴジラ-0.0』公式サイト｜大ヒット上映中"> </a> </div>
-    </div>
-    <ul class="g-nav-menu mt-2">
-      <li class="list_item nav-item"><a href="index.html"> <span class="nav-label">TOP</span> <span class="underline"></span> </a> </li>
-      <li class="list_item nav-item"><a href="news/index.html"> <span class="nav-label">NEWS</span> <span class="underline"></span> </a> </li>
-        
-               <li class="list_item nav-item"><a href="https://eigakan.org/theaterpage/schedule.php?t=godzillaminuszero" target="_blank"> <span class="nav-label">THEATER</span> <span class="underline"></span> </a> </li>
-        
-          
-   <!--        <li class="list_item nav-item"><a href="tickets.html"><span class="nav-label">TICKETS</span><span class="underline"></span></a></li>-->
-        
-        
-<!--      <li class="list_item nav-item"> <a href="https://www.youtube.com/embed/zEHK82NBwp0" class="modaal-video auto-trailer"> <span class="nav-label">TRAILER</span> <span class="underline"></span> </a> </li>-->
-             <li class="list_item nav-item"><a class="pageScroll" href="#trailer"><span class="nav-label">TRAILER</span> <span class="underline"></span> </a> </li>  
-        
-        
-                <li class="list_item nav-item"><a class="pageScroll" href="#introduction"><span class="nav-label">INTRODUCTION & STORY</span> <span class="underline"></span> </a> </li>  
-        
-                     <li class="list_item nav-item"><a class="pageScroll" href="#cast"><span class="nav-label">CHARACTER/CAST</span> <span class="underline"></span> </a> </li> 
-        
-                  <li class="list_item nav-item"><a class="pageScroll" href="#staff"><span class="nav-label">STAFF</span> <span class="underline"></span> </a> </li> 
-        
-            <li class="list_item nav-item"><a href="format.html"><span class="nav-label">FILMED FOR IMAX</span><span class="underline"></span></a></li>
-        
-        
+  </header>
+
+  <!-- ハンバーガーメニューの中身 -->
+  <nav class="nav-drawer" id="navDrawer">
+    <button class="nav-close" onclick="toggleMenu()">×</button>
+    <ul>
+      <li><a href="#" onclick="toggleMenu()">TOP</a></li>
+      <li><a href="#trailer" onclick="toggleMenu()">TRAILER</a></li>
+      <li><a href="#news" onclick="toggleMenu()">NEWS</a></li>
+      <li><a href="#intro" onclick="toggleMenu()">INTRODUCTION</a></li>
+      <li><a href="#cast" onclick="toggleMenu()">CHARACTER / CAST</a></li>
+      <li><a href="#staff" onclick="toggleMenu()">STAFF</a></li>
     </ul>
-  </div>
-</nav>
-<div class="header-sns last_anime">
-  <div class="header-sns__item yt"><a href="https://www.youtube.com/@OfficialTohoMovie" target="_blank"><img src="img/common/ico_youtube.svg" alt="Youtube"></a></div>
-  <div class="header-sns__item x"> <a href="#" class="bt-share"><img src="svg/share-social.svg" alt=""></a> </div>
-</div>
-<div id="top-bt" class="top-bt"> <a class="pageScroll" href="#pagetop"><img src="svg/arrow-up-icon.svg?var=02" alt=""></a> </div>
-<div data-barba="wrapper">
-  <main id="container" data-barba="container" data-barba-namespace="home" class="mainContents">
-    <div class="bg-wrapper"></div>
-    <div class="scroll-contents">
-      <div  class="mainVisual">
-   <!--     <div class="ytplayer-wrapper" id="ytplayerWrapper">
-          <div class="video-fallback" aria-hidden="true">
-            <picture>
-              <source media="(max-width: 750px)" srcset="img/top/top_00_movie_sp.webp">
-              <img src="img/top/top_00_movie.webp" alt="">
-            </picture>
-          </div>
-          <div class="ytplayer-overlay"></div>
-          <div id="videoPlay">
-            <video
-              id="bgVideo"
-              class="bg-video"
-              muted
-              autoplay
-              loop
-              playsinline
-              webkit-playsinline
-              preload="none"
-              aria-hidden="true"
-            ></video>
-          </div>
-        </div>-->
-        <div id="pc_top_00" class="mainVisual__inner">
-          <picture>
-            <source media="(max-width: 750px)" srcset="img/top/top3_01_sp.webp?var=01">
-            <img src="img/top/top2_01.webp" alt=""/></picture>
-        </div>
-        
- 
-           <div id="pc_top_01" class="mainVisual__layer ">
-          <picture>
-            <source media="(max-width: 750px)" srcset="img/top/top3_02_sp.png?var=11">
-            <img src="img/top/top3_02.png?var=11" alt=""/></picture>
-        </div>
-          
-  <!--          <div id="pc_top_03" class="mainVisual__layer ">
-          <picture>
-            <source media="(max-width: 750px)" srcset="img/top/top2_03_sp.png?var=05">
-            <img src="img/top/top_00_movie.png?var=05" alt=""/></picture>
-        </div>-->
-        
-        <div class="top_logo pc">
-          <picture>
-            <source media="(max-width: 750px)" srcset="img/top/top_logo_sp.png?var=06">
-            <img src="img/top/top_logo.png?var=06" alt="映画『ゴジラ-0.0』公式サイト｜大ヒット上映中"/></picture>
-        </div>
+  </nav>
+
+  <!-- 2. ヒーロー画面 -->
+  <section class="hero">
+    <!-- ★後で images/hero.jpg を入れると背景に表示されます -->
+    <img src="images/hero.jpg" alt="メインビジュアル" class="hero-bg" onerror="this.style.display='none'">
+    <div class="hero-overlay"></div>
+
+    <p class="hero-catch">星野製作所は、諦めるしかない。</p>
+
+    <div class="hero-content">
+      <div class="hero-main">
+        <h1 class="hero-title">残念無念。</h1>
+        <p class="hero-en">ZANNEN MUNEN</p>
+        <p class="hero-credits">
+          星野製作所巨大災害対策課 ／ 内閣危機管理官監<br>
+          監督・脚本・編集：星野製作所 映画事業部<br>
+          製作：星野製作所 ／ 統映
+        </p>
       </div>
-        
-     <div class="pt-3 bg-color_black ">    
-         
-         
-          <div class="container1 section__bnr last_anime">
-               
-              
-                 <div class="section__bnr__item _large border "><a href="format.html" target="_top"><img src="img/bnr/bnr_format_l2.png" alt=""/></a></div>
-              
-           <!--      <div class="section__bnr__item _large border "><a href="https://godzilla-minuszero.toho-movie.jp/news/single-news.html?id=129" target="_top"><img src="img/bnr/bnr_imax_l.jpg" alt=""/></a></div>-->
-              
-                  <div class="section__bnr__item _large border "><a href="https://godzilla-minuszero.toho-movie.jp/news/single-news.html?id=195" target="_blanks"><img src="img/bnr/bnr_present_l.jpg" alt=""/></a></div>
-              
-                  <div class="section__bnr__item _large border "><a href="https://godzilla-minuszero.toho-movie.jp/news/single-news.html?id=176" target="_top"><img src="img/bnr/bnr_largeformat_l.jpg" alt=""/></a></div>
-               
-         
-           </div>
-           
-           
-           <div class="container1 section__bnr last_anime mt-1">
-               
-              
-               
-                  
-               
-<!--    <div class="section__bnr__item border "><a href="tickets.html" target="_top"><img src="img/bnr/bnr_ticket2.jpg" alt=""/></a></div>-->
-               
-                      <div class="section__bnr__item border "><a href="https://www.amazon.co.jp/stores/page/12157110-30E1-460C-A43A-6A512733269F
- 
-" target="_blank"><img src="img/bnr/bnr_amazon.jpg" alt=""/></a></div>
-               
-           <div class="section__bnr__item border "><a href="https://tohoentertainmentonline.com/shop/e/eGSgodzilla-minuszero/" target="_blank"><img src="img/bnr/gsbw2026-banner.jpg" alt=""/></a></div>
-               
-            <div class="section__bnr__item border "><a href="https://godzilla-minuszero.toho-movie.jp/news/single-news.html?id=124" target="_top"><img src="img/bnr/bnr_digital2.png" alt=""/></a></div>      
-               
-                  <div class="section__bnr__item border "><a href="https://godzilla-battle-line.go.link?adj_t=246j7y9e" target="_blank"><img src="img/bnr/g_battle.png" alt=""/></a></div>
-               
-                  <div class="section__bnr__item border "><a href="https://store-jp.nintendo.com/item/software/D70010000076627" target="_blank"><img src="img/bnr/g-vox.png" alt=""/></a></div>
-           
-           
-           </div>
-        
-       </div> 
-        
-      <div id="trailer" class="pt-6 pb-6 bg-color_black "> 
-        
-    <h2 class="headingL anime_gasp">TRAILER</h2>
-        
-        <div class="anime_gasp">
-          <div id="trailer-item" class="slideWrapper">
-  
-                 <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="We3rt2uQpoY"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">ファイナル予告</div>
-            </div>	
-			  
-			  
-                 <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="F_1FnUxXk8E"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">予告</div>
-            </div>
-			  
-			  
-                 <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="LE0dZ9mLAL4"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">映画公開記念特番</div>
-            </div>
-			  
-			   			      
-            <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="Yw09WoHfGcM"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">特報2</div>
-            </div>			  
-			  
-			      
-            <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="zEHK82NBwp0"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">特報</div>
-            </div>
-              
-              
-                   <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="kJFpjFmc6uA"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">ファーストティザー</div>
-            </div>
-               
-              
-                   <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="kKJ4NZzBFr8"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">IMAXカウントダウン</div>
-            </div>             
-              
-                 <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="-NKV2UUf5B8"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">予習映像 -0.0までの2分40秒</div>
-            </div>
-              
-              
-                 <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="P_sCUkNWXnA"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">15秒映像 全世界待望篇</div>
-            </div>
-              
-              
-                   <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="QKE9Yq1QC3Y"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">Behind The Scene</div>
-            </div>
-              
-              
-                   <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="0_otnUp1LnI"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">スペシャルインタビュー</div>
-            </div>			  
- 
-                   <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="hKA4Dv2-5dY"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">ニューヨーク映画祭ダイジェスト</div>
-            </div>
- 
-                   <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="UZuJ8sPgkig"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">LAプレミアダイジェスト</div>
-            </div>              
- 
-                   <div class="sliderwaku"> <a href="#"
-     class="modaal-video2"
-     data-yt="ufsOLtY1ATE"> <img class="trailer-img" alt="">
-              <div class="trailer-overlay"> <img src="svg/play_mark.svg" alt=""> </div>
-              </a>
-              <div class="trailer-title">ジャパンプレミア</div>
-            </div>   
-			  
-			  
-          </div>
-        </div>
+
+      <div class="hero-badge">
+        <p class="sub">観る前から諦めろ</p>
+        <p class="main">1.5 ROAD SHOW</p>
       </div>
-      <section id="news" class="bg-color_black1 pb-5">
-        <div class="container news-top">
-          <h2 class="headingL anime_gasp">NEWS</h2>
-          <div class="newsThumbList" id="newsThumbList"> </div>
-          <div class="centerButton anime_gasp mt-4 mb-3"> <a href="news/index.html" target="_top" class="buttonM">MORE</a> </div>
-        </div>
-      </section>
-        
-        
-       <div id="introduction" class="pt-6 pb-6 anime_gasp1">
-        
-        
-       <div class="container max-width _small">  
-           
-               <h2 class="headingL anime_gasp">INTRODUCTION & STORY</h2>
-           
-        <div class="anime_gasp mt-6">
-         <picture>
-            <source media="(max-width: 750px)" srcset="img/about/intro_01_sp.png?var=01?var=01">
-            <img src="img/about/intro_01.png?var=01" alt=""/></picture>
-        </div>
-           
-           
-              <div class="anime_gasp mt-6">
-         <picture>
-            <source media="(max-width: 750px)" srcset="img/about/intro_02_sp.png?var=01?var=01">
-            <img src="img/about/intro_02.png?var=01" alt=""/></picture>
-        </div>
-           
-           
-              <div class="anime_gasp mt-6">
-         <picture>
-            <source media="(max-width: 750px)" srcset="img/about/intro_03_sp.png?var=01?var=01">
-            <img src="img/about/intro_03.png?var=01" alt=""/></picture>
-        </div>
-        
-        
-        </div>  
-        
-        
-        
-        </div> 
-        
-        
-       <section id="cast" class="bg-color_black1 pb-5">
-        <div class="container news-top">
-          <h2 class="headingL anime_gasp">CHARACTER/CAST</h2>
-            
-            
-            
-            <div class="comment-set ">
-            
-           <div class="cast-img-item anime_gasp">
-                
-               <img src="img/caststaff/character_01.jpg?var=01" alt=""/>
-               
-                 <div class="comment-name _middle text-center mt-2 anime_gasp">敷島浩一／<span class="comment-name _middle">神木隆之介</span></div> 
-               
-               
-                </div> 
-            
-   <div class="cast-img-item anime_gasp">
-                
-               <img src="img/caststaff/character_02.jpg?var=01" alt=""/>
-               
-                <div class="comment-name _middle text-center mt-2 anime_gasp">敷島典子／<span class="comment-name _middle">浜辺美波</span></div> 
-               
-               
-                </div> 
-                
-                
-                
-                   <div class="cast-img-item anime_gasp">
-               <img src="img/caststaff/character_03.jpg?var=01" alt=""/>
-                <div class="comment-name _middle text-center mt-2 anime_gasp">水島四郎／<span class="comment-name _middle">山田裕貴</span></div> 
-                </div> 
-                
-                
-                
-                        <div class="cast-img-item anime_gasp">
-               <img src="img/caststaff/character_04.jpg?var=01" alt=""/>
-                <div class="comment-name _middle text-center mt-2 anime_gasp">秋津淸治／<span class="comment-name _middle">佐々木蔵之介</span></div> 
-                </div> 
-                
-                
-                        <div class="cast-img-item anime_gasp">
-               <img src="img/caststaff/character_05.jpg?var=01" alt=""/>
-                <div class="comment-name _middle text-center mt-2 anime_gasp">緒方医師／<span class="comment-name _middle">國村隼</span></div> 
-                </div> 
-                
-                        <div class="cast-img-item anime_gasp">
-               <img src="img/caststaff/character_06.jpg?var=01" alt=""/>
-                <div class="comment-name _middle text-center mt-2 anime_gasp">堀田辰雄／<span class="comment-name _middle">田中美央</span></div> 
-                </div> 
-                
-                        <div class="cast-img-item anime_gasp">
-               <img src="img/caststaff/character_07.jpg?var=01" alt=""/>
-                <div class="comment-name _middle text-center mt-2 anime_gasp">太田澄子／<span class="comment-name _middle">安藤サクラ</span></div> 
-                </div> 
-                
-                        <div class="cast-img-item anime_gasp">
-               <img src="img/caststaff/character_08.jpg?var=01" alt=""/>
-                <div class="comment-name _middle text-center mt-2 anime_gasp">青山眞琴／<span class="comment-name _middle">長澤まさみ</span></div> 
-                </div> 
-                
-                        <div class="cast-img-item anime_gasp">
-               <img src="img/caststaff/character_09.jpg?var=01" alt=""/>
-                <div class="comment-name _middle text-center mt-2 anime_gasp">村上寛治／<span class="comment-name _middle">田中泯</span></div> 
-                </div> 
-                
-                        <div class="cast-img-item anime_gasp">
-               <img src="img/caststaff/character_10.jpg?var=01" alt=""/>
-                <div class="comment-name _middle text-center mt-2 anime_gasp">野田健治／<span class="comment-name _middle">吉岡秀隆</span></div> 
-                </div> 
-            
-            </div>
-            
-            
-            
-            
-            
-                  
-    
-        </div>
-      </section>  
-        
-        
-          <section id="staff" class="bg-color_black1 pb-5">
-        <div class="container news-top">
-          <h2 class="headingL anime_gasp">STAFF</h2>
-            
-            
-            
-            <div class="comment-set ">
-            
-           <div class="comment-img-item anime_gasp">
-                
-               <img src="img/caststaff/staff_01.jpg?var=01" alt=""/> 
-                </div> 
-            
-            <div class="comment-text-item">
-                
-                <div class="comment-name anime_gasp">監督・脚本・VFX：</div>
-                  <div class="comment-name _large mt-1 anime_gasp">山崎 貴</div>
-                
-                <div class="text-default mt-1 anime_gasp">
-                
-               1964年、長野県松本市生まれ。幼少期に『スターウォーズ』や『未知との遭遇』と出会い、強く影響を受け、特撮の道に進むことを決意。阿佐ヶ谷美術専門学校卒業後、1986年に株式会社白組に入社。『大病人』(93)、『静かな生活』(95)など、伊丹十三監督作品にてSFXやデジタル合成などを担当。2000年『ジュブナイル』で監督デビュー。CGによる高度なビジュアルを駆使した映像表現・VFXの第一人者。<br>
-『ALWAYS 三丁目の夕日』(05)では、心温まる人情や活気、空気感を持つ昭和の街並みをVFXで表現し話題になり、第29回日本アカデミー賞最優秀作品賞・監督賞など12部門を受賞。『永遠の0』(13)、『STAND BY ME ドラえもん』(14)は、それぞれ第38回日本アカデミー賞最優秀作品賞ほか８部門、最優秀アニメーション作品賞を受賞。<br>
-また、監督・脚本・VFXを担当した『ゴジラ-1.0』（23）では、第96回アカデミー賞<span class="sup">🄬</span>で日本映画初の視覚効果賞受賞を果たした。日本を代表する映画監督の一人として数えられる。
- 
-                </div>
-                
-                </div>
-            
-            </div>
-            
-            
-            <div class="comment-set mt-4">
-            
-           <div class="comment-img-item anime_gasp">
-                
-               <img src="img/caststaff/staff_02.jpg?var=01" alt=""/> 
-                </div> 
-            
-            <div class="comment-text-item">
-                
-          <div class="comment-name anime_gasp">音楽：</div>
-                <div class="comment-name _large mt-1 anime_gasp">佐藤直紀</div>
-                
-                <div class="text-default mt-1 anime_gasp">
-                
-              1970年生まれ。『ALWAYS 三丁目の夕日』で第29回日本アカデミー賞最優秀音楽賞を受賞。『ALWAYS 三丁目の夕日』シリーズをはじめ、『BALLAD 名もなき恋のうた』『SPACE BATTLESHIP ヤマト』『永遠の0』『STAND BY ME ドラえもん』シリーズ、『寄生獣』二部作、『海賊とよばれた男』『DESTINY 鎌倉ものがたり』『アルキメデスの大戦』『ゴジラ-1.0』など、数多くの山崎貴監督作品の音楽を手掛ける。
-                </div>
-                
-                </div>
-            
-            </div>  
-            
-            
-                  <div class="comment-set1 mt-4">
-            
-          
-            
-            <div class="comment-text-item1">
-    
-                
-                
-                     <div class="anime_gasp mt-3 ">
-                     <img src="img/caststaff/staff_text.png?var=01" alt=""/>
- 
-                </div>
-                
-         <!--       <div class="text-default text-white mt-4 anime_gasp">
-                
-           製作：市川南　上田太地　エグゼクティブ・プロデューサー：臼井 央　企画・プロデュース：岸田一晃　プロデューサー：阿部 豪　守屋圭一郎　
-ラインプロデューサー：櫻井紘史　撮影：柴崎幸三　照明：上田なりゆき　美術：上條安里　平井亘　装飾：龍田哲児　羽場しおり　録音：竹内久史　特機：奥田 悟　
-VFXスーパーバイザー：植木孝行　大久保榮真　渋谷紀世子　編集：宮島竜治　カラリスト：石山将弘　音響効果：井上奈津子　選曲：藤村義孝　
-衣裳：水島愛子　ヘアメイク：宮内三千代　スクリプター：阿保知香子　助監督：安達耕平　制作担当：間口 彰　プロダクション統括：大槻厚史
- 
-                </div>-->
-                
-                
-          
-                
-                </div>
-            
-            </div>
-    
-        </div>
-      </section> 
-        
-        
-        
-        
-        
-        
-        
-      <footer class="footer anime_gasp">
-        <div class="footer__set">
-          <div class="footer__bnr"><a href="https://godzilla-minuszero.toho-movie.jp/minusone/" target="_blank"><img src="img/common/godgilla_10_logo.png" alt="映画『ゴジラ-1.0』公式サイト"/></a></div>
-          <div class="footer__logo  "><a href="index.html"><img src="img/common/logo_01.png" alt="映画『ゴジラ-0.0』公式サイト｜大ヒット上映中"/></a></div>
-            
-            
-                   <div class="footer__hm_bnr  "><a href="https://eigakan.org/theaterpage/schedule.php?t=godzillaminuszero" target="_blank"><img src="img/common/hm_bnr.png" alt="本作品はHELLO! MOVIE方式による音声ガイド・日本語字幕に対応しています"/></a></div>
-            
-            
-          <div class="wb-link mt-1"> <a href="https://www.toho.co.jp/company/privacy-policy" target="_blank" >Privacy Policy</a><a href="https://www.toho.co.jp/company/cookie-policy" target="_blank" >Cookie Policy</a> </div>
-          <div class="footer__title mt-1 mb-1">ⓒ 2026 TOHO</div>
-        </div>
-      </footer>
     </div>
-    <!--scroll contents END--> 
-  </main>
-</div>
-<div id="hide-share" class="social-set">
-  <ul class="social-bt">
-    <li class="social-bt__item" > <a href="https://x.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
-               data-text="世界が熱狂した『ゴジラ-1.0』のその先へ。三度目はない。ここで全て終わらせる。監督・脚本・VFX：山崎貴"
-               data-url="https://godzilla-minuszero.toho-movie.jp/"
-				data-hashtags="映画『ゴジラ-0.0』"
-               data-lang="ja"
-               data-show-count="false">Tweet</a></li>
-    <li class="social-bt__item" >
-      <div id="eiga"><script src="https://secure.eiga.com/share/movie/102826.js"></script></div>
-    </li>
-    
-    <!--   <li class="social-bt__item" >
-                <div class="fb-share-button" data-href="https://godzilla-minuszero.toho-movie.jp/" data-layout="button" data-size="small"> <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmickey17url%2F&src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></div>
-              </li>-->
-    
-    <li class="social-bt__item ">
-      <div class="line-it-button" data-lang="ja" data-type="share-a" data-ver="3" data-url="https://godzilla-minuszero.toho-movie.jp/" data-color="default" data-size="small" data-count="false" style="display: none;"></div>
-    </li>
-  </ul>
-</div>
- 
-<!-- js --> 
- 
-<script src="./lib/jquery-3.6.0.min.js"></script> 
-<script src="./lib/jquery.easing.js"></script> 
-<script src="./lib/imagesloaded.pkgd.min.js"></script> 
-<script src="./lib/modaal.min.js"></script> 
-<script src="./lib/gsap.min.js?var=03"></script> 
-<script src="./lib/ScrollTrigger.min.js?var=04"></script> 
-<script src="./lib/slick.js"></script> 
-<script src="./js/loader.js?var=05"></script> 
-<script src="./js/common.js?var=10"></script> 
-<script src="./js/top.js?var=10"></script> 
-<script src="./js/top_news_api.js?var=11"></script> 
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-<script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-</body>
-</html>
+  </section>
+
+  <!-- 3. バナーエリア（画像がなくても文字枠で表示されます） -->
+  <div class="banner-area">
+    <div class="banner-container">
+      <div class="banner-row-2">
+        <a href="#intro" class="banner-slot">
+          <img src="images/banner1.jpg" alt="" onerror="this.style.display='none'">
+          <span>巨大災害対策課とは？</span>
+        </a>
+        <a href="#news" class="banner-slot">
+          <img src="images/banner2.jpg" alt="" onerror="this.style.display='none'">
+          <span>【先着順】諦めステッカー配布開始！</span>
+        </a>
+      </div>
+
+      <a href="#trailer" class="banner-slot">
+        <img src="images/banner3.jpg" alt="" onerror="this.style.display='none'">
+        <span>1.5 ROAD SHOW 予告編公開中！</span>
+      </a>
+
+      <div class="banner-row-3">
+        <a href="#staff" class="banner-slot">
+          <img src="images/banner4.jpg" alt="" onerror="this.style.display='none'">
+          <span>星野製作所 特設ページ</span>
+        </a>
+        <a href="#cast" class="banner-slot">
+          <img src="images/banner5.jpg" alt="" onerror="this.style.display='none'">
+          <span>星野ストア オンライン</span>
+        </a>
+        <a href="#trailer" class="banner-slot">
+          <img src="images/banner6.jpg" alt="" onerror="this.style.display='none'">
+          <span>特報マルイチ アーカイブ</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. TRAILER セクション -->
+  <section id="trailer" class="section-khaki">
+    <div class="container">
+      <h2 class="section-title">TRAILER</h2>
+
+      <!-- メイン再生プレイヤー -->
+      <div class="main-video-wrap">
+        <video id="mainPlayer" controls>
+          <source src="trailer2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="video-caption" id="videoCaption">予告マルニ</p>
+
+      <!-- サムネイル切り替え（クリックで上の動画が切り替わります） -->
+      <div class="trailer-thumbs">
+        <div class="thumb-card active" onclick="changeVideo('trailer2.mp4', '予告マルニ', this)">
+          <div class="thumb-box">
+            <img src="images/thumb2.jpg" alt="" onerror="this.style.display='none'">
+            <span class="play-icon">▶</span>
+          </div>
+          <p class="thumb-title">予告マルニ</p>
+        </div>
+
+        <div class="thumb-card" onclick="changeVideo('trailer1.mp4', '特報マルイチ', this)">
+          <div class="thumb-box">
+            <img src="images/thumb1.jpg" alt="" onerror="this.style.display='none'">
+            <span class="play-icon">▶</span>
+          </div>
+          <p class="thumb-title">特報マルイチ</p>
+        </div>
+
+        <div class="thumb-card" onclick="changeVideo('trailer2.mp4', '特別映像（準備中）', this)">
+          <div class="thumb-box">
+            <img src="images/thumb3.jpg" alt="" onerror="this.style.display='none'">
+            <span class="play-icon">▶</span>
+          </div>
+          <p class="thumb-title">特別映像（準備中）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. NEWS セクション -->
+  <section id="news" class="section-khaki">
+    <div class="container">
+      <h2 class="section-title">NEWS</h2>
+
+      <div class="news-list">
+        <a href="#trailer" class="news-item">
+          <div>
+            <p class="news-date">2026-11-18</p>
+            <p class="news-headline">最新映像『予告マルニ』が解禁されました！</p>
+          </div>
+          <span>></span>
+          <span class="news-tag">INFORMATION</span>
+        </a>
+
+        <a href="#intro" class="news-item">
+          <div>
+            <p class="news-date">2026-11-16</p>
+            <p class="news-headline">映画『残念無念。』公式サイトがオープン！</p>
+          </div>
+          <span>></span>
+          <span class="news-tag">MEDIA</span>
+        </a>
+      </div>
+
+      <a href="#news" class="btn-more">MORE</a>
+    </div>
+  </section>
+
+  <!-- 6. INTRODUCTION & STORY セクション -->
+  <section id="intro" class="section-intro">
+    <img src="images/intro_bg.jpg" alt="" class="intro-bg" onerror="this.style.display='none'">
+    <div class="intro-inner">
+      <h2 class="section-title">INTRODUCTION & STORY</h2>
+
+      <p class="intro-lead">
+        突如として発生した未曾有の事態。<br>
+        星野製作所は<ruby>「無」<rt>ゼロ</rt></ruby>になり、<br>
+        状況はさらに<ruby>「負」<rt>マイナス</rt></ruby>へと突き落とされた。<br>
+        内閣危機管理官監、そして巨大災害対策課が<br>
+        議論の末に導き出した唯一の結論とは――。
+      </p>
+
+      <p class="intro-director">監督・脚本・編集 星野製作所</p>
+      <p class="intro-sub">
+        本編制作の予定は未定。<br>
+        予告編だけで全てを出し切る新感覚プロジェクト。
+      </p>
+
+      <p class="intro-closing">
+        三度目はない。<br>
+        ここで、すべて諦める。
+      </p>
+    </div>
+  </section>
+
+  <!-- 7. CHARACTER / CAST セクション -->
+  <section id="cast" class="section-khaki">
+    <div class="container">
+      <h2 class="section-title">CHARACTER / CAST</h2>
+
+      <div class="cast-grid">
+        <div class="cast-card">
+          <div class="cast-photo">
+            <img src="images/cast1.jpg" alt="キャスト1" onerror="this.style.display='none'">
+            <span>images/cast1.jpg</span>
+          </div>
+          <p class="cast-name">巨大災害対策課 課長 ／ 出演者名</p>
+        </div>
+
+        <div class="cast-card">
+          <div class="cast-photo">
+            <img src="images/cast2.jpg" alt="キャスト2" onerror="this.style.display='none'">
+            <span>images/cast2.jpg</span>
+          </div>
+          <p class="cast-name">内閣危機管理官監 ／ 出演者名</p>
+        </div>
+
+        <div class="cast-card">
+          <div class="cast-photo">
+            <img src="images/cast3.jpg" alt="キャスト3" onerror="this.style.display='none'">
+            <span>images/cast3.jpg</span>
+          </div>
+          <p class="cast-name">対策課 現場担当 ／ 出演者名</p>
+        </div>
+
+        <div class="cast-card">
+          <div class="cast-photo">
+            <img src="images/cast4.jpg" alt="キャスト4" onerror="this.style.display='none'">
+            <span>images/cast4.jpg</span>
+          </div>
+          <p class="cast-name">謎の城の主 ／ 出演者名</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. STAFF セクション -->
+  <section id="staff" class="section-khaki">
+    <div class="container">
+      <h2 class="section-title">STAFF</h2>
+
+      <div class="staff-main-list">
+        <div class="staff-profile">
+          <div class="staff-photo">
+            <img src="images/staff1.jpg" alt="監督" onerror="this.style.display='none'">
+            <span>images/staff1.jpg</span>
+          </div>
+          <div>
+            <p class="staff-role">監督・脚本・編集：</p>
+            <h3 class="staff-person">星野製作所</h3>
+            <p class="staff-bio">
+              特報マルイチおよび予告マルニの企画・撮影・編集を一手に担う。
+              本編を制作する気力よりも先に予告編のクオリティを追求した結果、
+              「諦めるしかない」という境地に辿り着く。
+            </p>
+          </div>
+        </div>
+
+        <div class="staff-profile">
+          <div class="staff-photo">
+            <img src="images/staff2.jpg" alt="音楽" onerror="this.style.display='none'">
+            <span>images/staff2.jpg</span>
+          </div>
+          <div>
+            <p class="staff-role">巨大災害対策課・協力：</p>
+            <h3 class="staff-person">統映 制作チーム</h3>
+            <p class="staff-bio">
+              重厚な明朝体テロップの配置や、緊迫感あふれるカット割りの構成を担当。
+              絶妙な脱力感とシリアスさの融合を目指す。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="staff-roll">
+        製作：星野製作所 ／ 企画・プロデュース：巨大災害対策課 ／ 撮影・照明・編集：星野製作所 映画事業部<br>
+        美術・小道具：お城ロケ班 ／ 配給：統映
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. フッター -->
+  <footer>
+    <div class="footer-logo">残念無念。</div>
+    <div><span class="eirin-mark">統映</span></div>
+    <p class="copyright">© 2026 HOSHINO MANUFACTURING / TOEI PARODY PROJECT.</p>
+  </footer>
+
+  <script>
+    // ハンバーガーメニューの開閉
+    function toggleMenu() {
+      document.getElementById('navDrawer').classList.toggle('open');
+    }
+
+    // サムネイルをクリックしたときに動画を切り替える処理
+    function changeVideo(videoSrc, titleText, clickedCard) {
+      const player = document.getElementById('mainPlayer');
+      const caption = document.getElementById('videoCaption');
+      player.src = videoSrc;
+      player.play();
+      caption.textContent = titleText;
+
+      document.querySelectorAll('.thumb-card').forEach(card => card.classList.remove('active'));
+      clickedCard.classList.add('
