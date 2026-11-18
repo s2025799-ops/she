@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>映画『残念無念。』公式サイト</title>
+  <title>映画『シン・ホシノ』公式サイト</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-khaki: #4c412a;
-      --bg-khaki-dark: #38301e;
-      --bg-dark: #12100c;
+      --bg-main: #0c0c0e;
+      --bg-panel: #16161a;
+      --bg-dark: #050506;
       --text-main: #ffffff;
-      --text-sub: #dcd5c7;
-      --accent-gold: #d6bc7c;
-      --border-light: rgba(255, 255, 255, 0.25);
+      --text-sub: #b8b8c0;
+      --accent-red: #c41e1e;
+      --border-light: rgba(255, 255, 255, 0.2);
     }
 
     * {
@@ -30,7 +30,7 @@
     }
 
     body {
-      background-color: var(--bg-khaki);
+      background-color: var(--bg-main);
       color: var(--text-main);
       font-family: 'Noto Serif JP', serif;
       letter-spacing: 0.12em;
@@ -54,16 +54,20 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 25px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0));
+      background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0));
     }
 
-    .header-logo {
+    .header-logo-img {
+      height: 28px;
+      mix-blend-mode: screen;
+    }
+
+    .header-logo-fallback {
       font-weight: 900;
       font-size: 1.1rem;
       letter-spacing: 0.15em;
-      border: 1px solid rgba(255,255,255,0.4);
-      padding: 4px 10px;
-      background: rgba(0,0,0,0.5);
+      border-left: 3px solid var(--accent-red);
+      padding-left: 10px;
     }
 
     .header-right {
@@ -97,15 +101,15 @@
       background-color: #fff;
     }
 
-    /* ナビゲーションメニュー（三本線クリックで開閉） */
+    /* ナビゲーションメニュー */
     .nav-drawer {
       position: fixed;
       top: 0;
       right: -280px;
       width: 260px;
       height: 100vh;
-      background: rgba(15, 13, 10, 0.96);
-      border-left: 1px solid #444;
+      background: rgba(10, 10, 12, 0.97);
+      border-left: 1px solid #333;
       z-index: 1100;
       padding: 70px 30px;
       transition: right 0.3s ease;
@@ -135,19 +139,18 @@
       cursor: pointer;
     }
 
-    /* ===== 2. ヒーロー画面（トップビジュアル） ===== */
+    /* ===== 2. ヒーロー画面 ===== */
     .hero {
       position: relative;
       width: 100%;
-      min-height: 85vh;
-      background-color: #1a1f24;
+      min-height: 88vh;
+      background-color: #111317;
       display: flex;
       align-items: center;
       padding: 100px 6% 60px;
       overflow: hidden;
     }
 
-    /* 背景画像（images/hero.jpg を入れると表示される） */
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -161,7 +164,7 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 35% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+      background: radial-gradient(circle at 35% 50%, rgba(196, 30, 30, 0.12), rgba(0,0,0,0.88));
       z-index: 2;
     }
 
@@ -174,24 +177,33 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      min-height: 60vh;
+      min-height: 62vh;
     }
 
     .hero-main {
-      max-width: 600px;
+      max-width: 620px;
     }
 
-    .hero-title {
-      font-size: clamp(3rem, 7vw, 5.5rem);
+    /* ロゴ画像（黒背景を透明にして重ねる） */
+    .hero-logo-img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      mix-blend-mode: screen;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .hero-title-fallback {
+      font-size: clamp(3rem, 7vw, 5.2rem);
       font-weight: 900;
       line-height: 1.1;
-      text-shadow: 0 4px 25px rgba(0,0,0,0.9);
       margin-bottom: 10px;
     }
 
     .hero-en {
       font-size: 1rem;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.4em;
       color: var(--text-sub);
       margin-bottom: 25px;
     }
@@ -199,8 +211,7 @@
     .hero-credits {
       font-size: 0.78rem;
       line-height: 1.9;
-      color: #e0e0e0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+      color: #dcdcdc;
     }
 
     /* 右上の縦書きキャッチコピー */
@@ -214,19 +225,20 @@
       font-weight: 700;
       letter-spacing: 0.35em;
       line-height: 2;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+      border-right: 2px solid var(--accent-red);
+      padding-right: 12px;
     }
 
     /* 右下の公開表記バッジ */
     .hero-badge {
       text-align: right;
-      border-left: 3px solid var(--accent-gold);
+      border-left: 3px solid var(--accent-red);
       padding-left: 15px;
     }
 
     .hero-badge .sub {
       font-size: 0.85rem;
-      color: var(--accent-gold);
+      color: #ff4d4d;
       font-weight: 700;
     }
 
@@ -240,6 +252,7 @@
     .banner-area {
       background-color: var(--bg-dark);
       padding: 45px 20px;
+      border-top: 1px solid #222;
     }
 
     .banner-container {
@@ -264,8 +277,8 @@
 
     .banner-slot {
       position: relative;
-      background: #1f1c16;
-      border: 1px solid #3a3326;
+      background: #141418;
+      border: 1px solid #2f2f38;
       min-height: 75px;
       display: flex;
       align-items: center;
@@ -275,11 +288,11 @@
       font-size: 0.9rem;
       font-weight: 700;
       overflow: hidden;
-      transition: opacity 0.2s;
+      transition: border-color 0.2s;
     }
 
     .banner-slot:hover {
-      opacity: 0.85;
+      border-color: var(--accent-red);
     }
 
     .banner-slot img {
@@ -291,8 +304,8 @@
     }
 
     /* ===== 共通セクション設定 ===== */
-    .section-khaki {
-      background: linear-gradient(180deg, #52462d 0%, #453b25 100%);
+    .section-dark {
+      background: linear-gradient(180deg, #131317 0%, #0c0c0e 100%);
       padding: 80px 20px;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
@@ -310,10 +323,19 @@
       margin-bottom: 45px;
     }
 
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 2px;
+      background-color: var(--accent-red);
+      margin: 14px auto 0;
+    }
+
     /* ===== 4. TRAILER セクション ===== */
     .main-video-wrap {
       max-width: 720px;
-      margin: 0 auto 25px;
+      margin: 0 auto 20px;
       background: #000;
       border: 1px solid var(--border-light);
     }
@@ -328,7 +350,8 @@
       text-align: center;
       font-size: 0.95rem;
       margin-bottom: 25px;
-      color: var(--accent-gold);
+      color: #ff5c5c;
+      font-weight: 700;
     }
 
     .trailer-thumbs {
@@ -342,7 +365,7 @@
     .thumb-card {
       cursor: pointer;
       text-align: center;
-      opacity: 0.65;
+      opacity: 0.6;
       transition: opacity 0.2s;
     }
 
@@ -353,7 +376,7 @@
     .thumb-box {
       position: relative;
       aspect-ratio: 16 / 9;
-      background: #1b1812;
+      background: #1a1a20;
       border: 1px solid var(--border-light);
       display: flex;
       align-items: center;
@@ -376,7 +399,7 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: rgba(0,0,0,0.65);
+      background: rgba(196, 30, 30, 0.8);
       border: 1px solid #fff;
       display: flex;
       align-items: center;
@@ -399,17 +422,17 @@
 
     .news-item {
       position: relative;
-      background: rgba(20, 17, 11, 0.55);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: #16161b;
+      border: 1px solid rgba(255,255,255,0.12);
       padding: 22px 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: background 0.2s;
+      transition: border-color 0.2s;
     }
 
     .news-item:hover {
-      background: rgba(20, 17, 11, 0.85);
+      border-color: var(--accent-red);
     }
 
     .news-date {
@@ -427,7 +450,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      background: rgba(255,255,255,0.15);
+      background: var(--accent-red);
       font-size: 0.65rem;
       padding: 2px 12px;
       letter-spacing: 0.15em;
@@ -439,8 +462,8 @@
       margin: 0 auto;
       padding: 12px 0;
       text-align: center;
-      border: 1px solid rgba(255,255,255,0.4);
-      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.03);
       font-size: 0.85rem;
       letter-spacing: 0.25em;
     }
@@ -448,7 +471,7 @@
     /* ===== 6. INTRODUCTION & STORY セクション ===== */
     .section-intro {
       position: relative;
-      background: radial-gradient(circle at center, #2b3036 0%, #141619 100%);
+      background: radial-gradient(circle at center, #261414 0%, #09090b 100%);
       padding: 100px 20px;
       text-align: center;
       overflow: hidden;
@@ -460,18 +483,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.35;
+      opacity: 0.3;
     }
 
     .intro-inner {
       position: relative;
       z-index: 2;
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
     }
 
     .intro-lead {
-      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
       line-height: 2.5;
       margin-bottom: 45px;
     }
@@ -499,6 +522,7 @@
       font-weight: 700;
       line-height: 2.3;
       letter-spacing: 0.2em;
+      color: #ff6b6b;
     }
 
     /* ===== 7. CHARACTER / CAST セクション ===== */
@@ -518,14 +542,14 @@
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      background: #221d14;
+      background: #1a1a20;
       border: 1px solid var(--border-light);
       margin-bottom: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.8rem;
-      color: #998e7a;
+      color: #888894;
       overflow: hidden;
     }
 
@@ -540,6 +564,12 @@
     .cast-name {
       font-size: 0.95rem;
       font-weight: 600;
+    }
+
+    .cast-desc {
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      margin-top: 4px;
     }
 
     /* ===== 8. STAFF セクション ===== */
@@ -562,13 +592,13 @@
       position: relative;
       width: 100%;
       aspect-ratio: 3 / 4;
-      background: #221d14;
+      background: #1a1a20;
       border: 1px solid var(--border-light);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.75rem;
-      color: #998e7a;
+      color: #888894;
       overflow: hidden;
     }
 
@@ -595,7 +625,7 @@
     .staff-bio {
       font-size: 0.82rem;
       line-height: 1.9;
-      color: #eae4d7;
+      color: #dcdce2;
     }
 
     .staff-roll {
@@ -612,13 +642,13 @@
       background-color: var(--bg-dark);
       padding: 60px 20px 40px;
       text-align: center;
-      border-top: 1px solid #2c261b;
+      border-top: 1px solid #222;
     }
 
-    .footer-logo {
-      font-size: 2.2rem;
-      font-weight: 900;
-      margin-bottom: 25px;
+    .footer-logo-img {
+      max-width: 240px;
+      mix-blend-mode: screen;
+      margin-bottom: 20px;
     }
 
     .eirin-mark {
@@ -632,11 +662,10 @@
 
     .copyright {
       font-size: 0.7rem;
-      color: #777;
+      color: #666;
       margin-top: 15px;
     }
 
-    /* スマホ画面用の調整 */
     @media (max-width: 680px) {
       .hero-content {
         flex-direction: column;
@@ -646,6 +675,9 @@
       .hero-catch {
         position: static;
         writing-mode: horizontal-tb;
+        border-right: none;
+        border-left: 3px solid var(--accent-red);
+        padding-left: 12px;
         margin-bottom: 20px;
       }
       .banner-row-2, .banner-row-3, .cast-grid {
@@ -664,7 +696,11 @@
 
   <!-- 1. 固定ヘッダー -->
   <header class="site-header">
-    <a href="#" class="header-logo">残念無念。</a>
+    <a href="#">
+      <img src="images/logo_white.jpg" alt="シン・ホシノ" class="header-logo-img"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+      <span class="header-logo-fallback" style="display:none;">シン・ホシノ</span>
+    </a>
     <div class="header-right">
       <div class="sns-links">
         <a href="#trailer">X</a>
@@ -680,7 +716,7 @@
     </div>
   </header>
 
-  <!-- ハンバーガーメニューの中身 -->
+  <!-- ハンバーガーメニュー -->
   <nav class="nav-drawer" id="navDrawer">
     <button class="nav-close" onclick="toggleMenu()">×</button>
     <ul>
@@ -695,72 +731,74 @@
 
   <!-- 2. ヒーロー画面 -->
   <section class="hero">
-    <!-- ★後で images/hero.jpg を入れると背景に表示されます -->
     <img src="images/hero.jpg" alt="メインビジュアル" class="hero-bg" onerror="this.style.display='none'">
     <div class="hero-overlay"></div>
 
-    <p class="hero-catch">星野製作所は、諦めるしかない。</p>
+    <p class="hero-catch">星野製作所は、戦うことを選んだ。</p>
 
     <div class="hero-content">
       <div class="hero-main">
-        <h1 class="hero-title">残念無念。</h1>
-        <p class="hero-en">ZANNEN MUNEN</p>
+        <!-- ★送ってくれた黒背景白ロゴ画像を images/logo_white.jpg にすると透過合成されます -->
+        <img src="images/logo_white.jpg" alt="シン・ホシノ" class="hero-logo-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <h1 class="hero-title-fallback" style="display:none;">シン・ホシノ</h1>
+
+        <p class="hero-en">SHIN HOSHINO</p>
         <p class="hero-credits">
-          星野製作所巨大災害対策課 ／ 内閣危機管理官監<br>
-          監督・脚本・編集：星野製作所 映画事業部<br>
-          製作：星野製作所 ／ 統映
+          ディピョン丸（星野製作所 公式キャラクター） ／ ゴジラ<br>
+          内閣危機管理官監 ／ 星野製作所 巨大災害対策課<br>
+          企画原案：副社長 ／ 製作：星野製作所 ／ 配給：統映
         </p>
       </div>
 
       <div class="hero-badge">
-        <p class="sub">観る前から諦めろ</p>
+        <p class="sub">諦めから、反撃へ。</p>
         <p class="main">1.5 ROAD SHOW</p>
       </div>
     </div>
   </section>
 
-  <!-- 3. バナーエリア（画像がなくても文字枠で表示されます） -->
+  <!-- 3. バナーエリア -->
   <div class="banner-area">
     <div class="banner-container">
       <div class="banner-row-2">
-        <a href="#intro" class="banner-slot">
+        <a href="#cast" class="banner-slot">
           <img src="images/banner1.jpg" alt="" onerror="this.style.display='none'">
-          <span>巨大災害対策課とは？</span>
+          <span>公式キャラ『ディピョン丸』緊急参戦！</span>
         </a>
-        <a href="#news" class="banner-slot">
+        <a href="#intro" class="banner-slot">
           <img src="images/banner2.jpg" alt="" onerror="this.style.display='none'">
-          <span>【先着順】諦めステッカー配布開始！</span>
+          <span>巨大不明生物『ゴジラ』上陸対策本部</span>
         </a>
       </div>
 
       <a href="#trailer" class="banner-slot">
         <img src="images/banner3.jpg" alt="" onerror="this.style.display='none'">
-        <span>1.5 ROAD SHOW 予告編公開中！</span>
+        <span>1.5 ROAD SHOW 予告編・特報アーカイブ公開中</span>
       </a>
 
       <div class="banner-row-3">
         <a href="#staff" class="banner-slot">
           <img src="images/banner4.jpg" alt="" onerror="this.style.display='none'">
-          <span>星野製作所 特設ページ</span>
+          <span>星野製作所 巨大災害対策課</span>
         </a>
-        <a href="#cast" class="banner-slot">
+        <a href="#news" class="banner-slot">
           <img src="images/banner5.jpg" alt="" onerror="this.style.display='none'">
-          <span>星野ストア オンライン</span>
+          <span>ディピョン丸 グッズストア</span>
         </a>
         <a href="#trailer" class="banner-slot">
           <img src="images/banner6.jpg" alt="" onerror="this.style.display='none'">
-          <span>特報マルイチ アーカイブ</span>
+          <span>旧企画『残念無念。』資料館</span>
         </a>
       </div>
     </div>
   </div>
 
   <!-- 4. TRAILER セクション -->
-  <section id="trailer" class="section-khaki">
+  <section id="trailer" class="section-dark">
     <div class="container">
       <h2 class="section-title">TRAILER</h2>
 
-      <!-- メイン再生プレイヤー -->
       <div class="main-video-wrap">
         <video id="mainPlayer" controls>
           <source src="trailer2.mp4" type="video/mp4">
@@ -768,7 +806,6 @@
       </div>
       <p class="video-caption" id="videoCaption">予告マルニ</p>
 
-      <!-- サムネイル切り替え（クリックで上の動画が切り替わります） -->
       <div class="trailer-thumbs">
         <div class="thumb-card active" onclick="changeVideo('trailer2.mp4', '予告マルニ', this)">
           <div class="thumb-box">
@@ -778,7 +815,7 @@
           <p class="thumb-title">予告マルニ</p>
         </div>
 
-        <div class="thumb-card" onclick="changeVideo('trailer1.mp4', '特報マルイチ', this)">
+        <div class="thumb-card" onclick="changeVideo('trailer1.mp4', '特報マルイチ（旧タイトル版）', this)">
           <div class="thumb-box">
             <img src="images/thumb1.jpg" alt="" onerror="this.style.display='none'">
             <span class="play-icon">▶</span>
@@ -786,36 +823,45 @@
           <p class="thumb-title">特報マルイチ</p>
         </div>
 
-        <div class="thumb-card" onclick="changeVideo('trailer2.mp4', '特別映像（準備中）', this)">
+        <div class="thumb-card" onclick="changeVideo('trailer2.mp4', '予告マルサン（制作中）', this)">
           <div class="thumb-box">
             <img src="images/thumb3.jpg" alt="" onerror="this.style.display='none'">
             <span class="play-icon">▶</span>
           </div>
-          <p class="thumb-title">特別映像（準備中）</p>
+          <p class="thumb-title">予告マルサン（準備中）</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 5. NEWS セクション -->
-  <section id="news" class="section-khaki">
+  <section id="news" class="section-dark">
     <div class="container">
       <h2 class="section-title">NEWS</h2>
 
       <div class="news-list">
-        <a href="#trailer" class="news-item">
-          <div>
-            <p class="news-date">2026-11-18</p>
-            <p class="news-headline">最新映像『予告マルニ』が解禁されました！</p>
-          </div>
-          <span>></span>
-          <span class="news-tag">INFORMATION</span>
-        </a>
-
         <a href="#intro" class="news-item">
           <div>
+            <p class="news-date">2026-11-18</p>
+            <p class="news-headline">【重要】副社長の突然の思いつきにより、タイトルが『シン・ホシノ』へ電撃変更！</p>
+          </div>
+          <span>></span>
+          <span class="news-tag">IMPORTANT</span>
+        </a>
+
+        <a href="#cast" class="news-item">
+          <div>
+            <p class="news-date">2026-11-18</p>
+            <p class="news-headline">星野製作所公式キャラクター「ディピョン丸」のゴジラ討伐作戦への参加が決定！</p>
+          </div>
+          <span>></span>
+          <span class="news-tag">CHARACTER</span>
+        </a>
+
+        <a href="#trailer" class="news-item">
+          <div>
             <p class="news-date">2026-11-16</p>
-            <p class="news-headline">映画『残念無念。』公式サイトがオープン！</p>
+            <p class="news-headline">『予告マルニ』公開中！公式サイトリニューアルオープン</p>
           </div>
           <span>></span>
           <span class="news-tag">MEDIA</span>
@@ -833,69 +879,72 @@
       <h2 class="section-title">INTRODUCTION & STORY</h2>
 
       <p class="intro-lead">
-        突如として発生した未曾有の事態。<br>
-        星野製作所は<ruby>「無」<rt>ゼロ</rt></ruby>になり、<br>
-        状況はさらに<ruby>「負」<rt>マイナス</rt></ruby>へと突き落とされた。<br>
-        内閣危機管理官監、そして巨大災害対策課が<br>
-        議論の末に導き出した唯一の結論とは――。
+        東京湾から突如上陸した<ruby>巨大不明生物<rt>ゴジラ</rt></ruby>。<br>
+        当初「諦めるしかない」と結論づけた星野製作所だったが、<br>
+        副社長の突然の思いつきにより事態は急転する――。<br>
+        日本政府および内閣危機管理官監との極秘協定のもと、<br>
+        星野製作所公式キャラクター<ruby>『ディピョン丸』<rt>カエル</rt></ruby>が前線へ投入される！
       </p>
 
-      <p class="intro-director">監督・脚本・編集 星野製作所</p>
+      <p class="intro-director">企画変更発案：星野製作所 副社長</p>
       <p class="intro-sub">
-        本編制作の予定は未定。<br>
-        予告編だけで全てを出し切る新感覚プロジェクト。
+        一匹のカエルと日本政府の総力を挙げた、<br>
+        前代未聞のゴジラ討伐作戦が今、幕を開ける。
       </p>
 
       <p class="intro-closing">
-        三度目はない。<br>
-        ここで、すべて諦める。
+        現実（ゴジラ） 対 虚構（ディピョン丸）。
       </p>
     </div>
   </section>
 
   <!-- 7. CHARACTER / CAST セクション -->
-  <section id="cast" class="section-khaki">
+  <section id="cast" class="section-dark">
     <div class="container">
       <h2 class="section-title">CHARACTER / CAST</h2>
 
       <div class="cast-grid">
         <div class="cast-card">
           <div class="cast-photo">
-            <img src="images/cast1.jpg" alt="キャスト1" onerror="this.style.display='none'">
+            <img src="images/cast1.jpg" alt="ディピョン丸" onerror="this.style.display='none'">
             <span>images/cast1.jpg</span>
           </div>
-          <p class="cast-name">巨大災害対策課 課長 ／ 出演者名</p>
+          <p class="cast-name">ディピョン丸</p>
+          <p class="cast-desc">星野製作所 公式キャラクター（カエル）。ゴジラ討伐の切り札。</p>
         </div>
 
         <div class="cast-card">
           <div class="cast-photo">
-            <img src="images/cast2.jpg" alt="キャスト2" onerror="this.style.display='none'">
+            <img src="images/cast2.jpg" alt="ゴジラ" onerror="this.style.display='none'">
             <span>images/cast2.jpg</span>
           </div>
-          <p class="cast-name">内閣危機管理官監 ／ 出演者名</p>
+          <p class="cast-name">ゴジラ</p>
+          <p class="cast-desc">突如上陸した巨大不明生物。日本政府最大の脅威。</p>
         </div>
 
         <div class="cast-card">
           <div class="cast-photo">
-            <img src="images/cast3.jpg" alt="キャスト3" onerror="this.style.display='none'">
+            <img src="images/cast3.jpg" alt="内閣危機管理官監" onerror="this.style.display='none'">
             <span>images/cast3.jpg</span>
           </div>
-          <p class="cast-name">対策課 現場担当 ／ 出演者名</p>
+          <p class="cast-name">内閣危機管理官監 ／ 巨大災害対策課</p>
+          <p class="cast-desc">ディピョン丸との共同作戦を指揮する政府・企業合同チーム。</p>
         </div>
 
         <div class="cast-card">
           <div class="cast-photo">
-            <img src="images/cast4.jpg" alt="キャスト4" onerror="this.style.display='none'">
+            <img src="images/cast4.jpg" alt="副社長" onerror="this.style.display='none'">
             <span>images/cast4.jpg</span>
           </div>
-          <p class="cast-name">謎の城の主 ／ 出演者名</p>
+          <p class="cast-name">星野製作所 副社長</p>
+          <p class="cast-desc">突然の思いつきで全スタッフの企画書を白紙に戻した張本人。</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 8. STAFF セクション -->
-  <section id="staff" class="section-khaki">
+  <section id="staff" class="section-dark">
     <div class="container">
       <h2 class="section-title">STAFF</h2>
 
@@ -907,52 +956,53 @@
           </div>
           <div>
             <p class="staff-role">監督・脚本・編集：</p>
-            <h3 class="staff-person">星野製作所</h3>
+            <h3 class="staff-person">星野製作所 映画事業部</h3>
             <p class="staff-bio">
-              特報マルイチおよび予告マルニの企画・撮影・編集を一手に担う。
-              本編を制作する気力よりも先に予告編のクオリティを追求した結果、
-              「諦めるしかない」という境地に辿り着く。
+              当初は「諦めるしかない」をテーマに『残念無念。』の予告編を2本まで完成させていたが、
+              副社長の突然の思いつきを受け、急遽ディピョン丸対ゴジラの壮大な怪獣特撮路線へと舵を切る。
             </p>
           </div>
         </div>
 
         <div class="staff-profile">
           <div class="staff-photo">
-            <img src="images/staff2.jpg" alt="音楽" onerror="this.style.display='none'">
+            <img src="images/staff2.jpg" alt="副社長" onerror="this.style.display='none'">
             <span>images/staff2.jpg</span>
           </div>
           <div>
-            <p class="staff-role">巨大災害対策課・協力：</p>
-            <h3 class="staff-person">統映 制作チーム</h3>
+            <p class="staff-role">企画原案・タイトル変更発案：</p>
+            <h3 class="staff-person">星野製作所 副社長</h3>
             <p class="staff-bio">
-              重厚な明朝体テロップの配置や、緊迫感あふれるカット割りの構成を担当。
-              絶妙な脱力感とシリアスさの融合を目指す。
+              「うちの公式キャラのディピョン丸とゴジラを戦わせよう」という一言で、
+              作品のタイトルから世界観まで全てをひっくり返した。
             </p>
           </div>
         </div>
       </div>
 
       <div class="staff-roll">
-        製作：星野製作所 ／ 企画・プロデュース：巨大災害対策課 ／ 撮影・照明・編集：星野製作所 映画事業部<br>
-        美術・小道具：お城ロケ班 ／ 配給：統映
+        製作：星野製作所 ／ 協力：日本政府・内閣危機管理官監 ／ キャラクター管理：ディピョン丸推進室<br>
+        編集・特撮：星野製作所 映画事業部 ／ 配給：統映
       </div>
     </div>
   </section>
 
   <!-- 9. フッター -->
   <footer>
-    <div class="footer-logo">残念無念。</div>
+    <div>
+      <img src="images/logo_white.jpg" alt="シン・ホシノ" class="footer-logo-img"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <div style="display:none; font-size:2rem; font-weight:900; margin-bottom:20px;">シン・ホシノ</div>
+    </div>
     <div><span class="eirin-mark">統映</span></div>
-    <p class="copyright">© 2026 HOSHINO MANUFACTURING / TOEI PARODY PROJECT.</p>
+    <p class="copyright">© 2026 HOSHINO MANUFACTURING / SHIN HOSHINO PROJECT.</p>
   </footer>
 
   <script>
-    // ハンバーガーメニューの開閉
     function toggleMenu() {
       document.getElementById('navDrawer').classList.toggle('open');
     }
 
-    // サムネイルをクリックしたときに動画を切り替える処理
     function changeVideo(videoSrc, titleText, clickedCard) {
       const player = document.getElementById('mainPlayer');
       const caption = document.getElementById('videoCaption');
@@ -961,4 +1011,9 @@
       caption.textContent = titleText;
 
       document.querySelectorAll('.thumb-card').forEach(card => card.classList.remove('active'));
-      clickedCard.classList.add('
+      clickedCard.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
