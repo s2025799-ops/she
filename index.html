@@ -140,12 +140,12 @@
       cursor: pointer;
     }
 
-    /* ===== 2. ヒーロー画面 ===== */
+   /* ===== 2. ヒーロー画面 ===== */
     .hero {
       position: relative;
       width: 100%;
       min-height: 88vh;
-      background-color: #111317;
+      background-color: #000000;
       display: flex;
       align-items: center;
       padding: 100px 6% 60px;
@@ -158,14 +158,15 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.65;
+      opacity: 1; /* 1にすることで霧をなくし画像をくっきり表示 */
       z-index: 1;
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 35% 50%, rgba(196, 30, 30, 0.12), rgba(0,0,0,0.88));
+      /* 中央の飛行機は隠さず、下の文字が読めるように下部だけ軽く影をつける */
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.3) 100%);
       z-index: 2;
     }
 
@@ -207,27 +208,30 @@
       letter-spacing: 0.4em;
       color: var(--text-sub);
       margin-bottom: 25px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
     }
 
     .hero-credits {
       font-size: 0.78rem;
       line-height: 1.9;
-      color: #dcdcdc;
+      color: #eeeeee;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
     }
 
-    /* 右上の縦書きキャッチコピー */
+    /* 右上の縦書きキャッチコピー（下の文字と重ならないよう位置と余白を調整） */
     .hero-catch {
       position: absolute;
-      top: 90px;
+      top: 75px;
       right: 6%;
       z-index: 3;
       writing-mode: vertical-rl;
-      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
       font-weight: 700;
-      letter-spacing: 0.35em;
-      line-height: 2;
+      letter-spacing: 0.3em;
+      line-height: 1.8;
       border-right: 2px solid var(--accent-red);
       padding-right: 12px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
     }
 
     /* 右下の公開表記バッジ */
@@ -235,6 +239,7 @@
       text-align: right;
       border-left: 3px solid var(--accent-red);
       padding-left: 15px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
     }
 
     .hero-badge .sub {
@@ -248,6 +253,8 @@
       font-weight: 900;
       letter-spacing: 0.15em;
     }
+
+    
 
     /* ===== 3. バナーエリア ===== */
     .banner-area {
