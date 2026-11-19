@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --bg-main: #0c0c0e;
       --bg-panel: #16161a;
@@ -690,6 +691,78 @@
         max-width: 200px;
       }
     }
+
+    /* ===== MECHANICS & BASE（特殊機材・拠点紹介） ===== */
+    .mech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .mech-card {
+      background: #141419;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 20px;
+    }
+
+    .mech-photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1d1d24;
+      border: 1px solid var(--border-light);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #888894;
+      overflow: hidden;
+    }
+
+    .mech-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mech-label {
+      display: inline-block;
+      background: var(--accent-red);
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      margin-bottom: 8px;
+      letter-spacing: 0.15em;
+    }
+
+    .mech-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .mech-sub {
+      font-size: 0.82rem;
+      color: #ff6b6b;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .mech-desc {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      line-height: 1.85;
+    }
+
+    @media (max-width: 680px) {
+      .mech-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -898,6 +971,43 @@
     </div>
   </section>
 
+<!-- MECHANICS & BASE（特殊機材・拠点紹介）セクション -->
+  <section id="mechanics" class="section-dark">
+    <div class="container">
+      <h2 class="section-title">MECHANICS & BASE</h2>
+
+      <div class="mech-grid">
+        <!-- B774大型特殊観測機（B777急改造機） -->
+        <div class="mech-card">
+          <div class="mech-photo">
+            <img src="images/b774.jpg" alt="B774大型特殊観測機" onerror="this.style.display='none'">
+            <span>images/b774.jpg</span>
+          </div>
+          <span class="mech-label">DECOY AIRCRAFT</span>
+          <h3 class="mech-name">B774 大型特殊観測機</h3>
+          <p class="mech-sub">ベース機体：ANA・B777-300</p>
+          <p class="mech-desc">
+            既存の大型機B777を星野製作所の技術陣が突貫で急改造した特殊機体。ゴジラを誘い出す「囮（おとり）」としての危険な任務を担い、至近距離での観測と誘導を行う。
+          </p>
+        </div>
+
+        <!-- 星野製作所 本社 -->
+        <div class="mech-card">
+          <div class="mech-photo">
+            <img src="images/honsha.jpg" alt="星野製作所本社" onerror="this.style.display='none'">
+            <span>images/honsha.jpg</span>
+          </div>
+          <span class="mech-label">HEADQUARTERS</span>
+          <h3 class="mech-name">星野製作所 本社</h3>
+          <p class="mech-sub">アクセス：武蔵新田駅 徒歩4分</p>
+          <p class="mech-desc">
+            巨大災害対策課の指令中枢であり、ディピョン丸の拠点。当初指揮を執る本部になる予定だったが、ゴジラに踏み潰された為、最終的な指揮は立川支部で行うことになった。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- 7. CHARACTER / CAST セクション -->
   <section id="cast" class="section-dark">
     <div class="container">
