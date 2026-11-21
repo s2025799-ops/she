@@ -5,6 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>映画『シン・ホシノ』公式サイト</title>
+  <meta name="description" content="東京湾アクアライン破断。相模湾から突如上陸した巨大不明生物ゴジラに対し、星野製作所公式キャラクター『ディピョン丸』が立ち向かう！映画『シン・ホシノ』公式サイト。">
+
+  <!-- ★追加1：ファビコン設定（正方形のPNG画像を同じフォルダにアップロードしてください） -->
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- ★追加2：Google検索・SNS向けのサイト名設定 -->
+  <meta property="og:site_name" content="星野製作所株式会社">
+  <meta property="og:title" content="映画『シン・ホシノ』公式サイト">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://s2025799-ops.github.io/she/">
+
+  <!-- ★追加3：Google検索のサイト名を「星野製作所株式会社」にする構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "星野製作所株式会社",
+    "alternateName": ["星野製作所", "シン・ホシノ公式サイト"],
+    "url": "https://s2025799-ops.github.io/she/"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -159,14 +182,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 1; /* 1にすることで霧をなくし画像をくっきり表示 */
+      opacity: 1;
       z-index: 1;
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      /* 中央の飛行機は隠さず、下の文字が読めるように下部だけ軽く影をつける */
       background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.3) 100%);
       z-index: 2;
     }
@@ -187,7 +209,6 @@
       max-width: 620px;
     }
 
-    /* ロゴ画像（黒背景を透明にして重ねる） */
     .hero-logo-img {
       width: 100%;
       max-width: 520px;
@@ -219,7 +240,6 @@
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
     }
 
-    /* 右上の縦書きキャッチコピー（下の文字と重ならないよう位置と余白を調整） */
     .hero-catch {
       position: absolute;
       top: 75px;
@@ -235,7 +255,6 @@
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
     }
 
-    /* 右下の公開表記バッジ */
     .hero-badge {
       text-align: right;
       border-left: 3px solid var(--accent-red);
@@ -254,8 +273,6 @@
       font-weight: 900;
       letter-spacing: 0.15em;
     }
-
-    
 
     /* ===== 3. バナーエリア ===== */
     .banner-area {
@@ -819,7 +836,6 @@
 
     <div class="hero-content">
       <div class="hero-main">
-        <!-- ★送ってくれた黒背景白ロゴ画像を images/logo_white.jpg にすると透過合成されます -->
         <img src="hosiroro.png" alt="シン・ホシノ" class="hero-logo-img"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <h1 class="hero-title-fallback" style="display:none;">シン・ホシノ</h1>
@@ -979,7 +995,7 @@
     </div>
   </section>
 
-<!-- MECHANICS & BASE（特殊機材・拠点紹介）セクション -->
+  <!-- MECHANICS & BASE（特殊機材・拠点紹介）セクション -->
   <section id="mechanics" class="section-dark">
     <div class="container">
       <h2 class="section-title">MECHANICS & BASE</h2>
